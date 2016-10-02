@@ -29,7 +29,8 @@ body {
 /* navbar custom */
 
 .navbar-inverse-custom{
-  background-color: #003067 ;
+  background-color: #f5f7f9;
+  border-color: #eeeeee;
 }
 
 a{
@@ -41,10 +42,14 @@ a:hover{
   text-decoration: none;
 }
 
-.navbar-right > li > a,
-.navbar-right > li > a:hover,
-.navbar-right > li > a:focus{
-  color: #FFFFFF;
+.navbar-inverse .navbar-right > li > a{
+  color: #9d9d9d;
+}
+.navbar-inverse .navbar-right > li > a:hover{
+  color: #2e2f30
+}
+.navbar-inverse .navbar-right > li > a:focus{
+  color: #9d9d9d;
   background-color: transparent;
 }
 .navbar-inverse-custom .navbar-toggle:hover,
@@ -67,7 +72,7 @@ a:hover{
  * Hide default border to remove 1px line.
  */
 .navbar-fixed-top {
-  border: 0;
+  border: 1;
 }
 
 /*
@@ -89,7 +94,7 @@ a:hover{
     padding: 20px;
     overflow-x: hidden;
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-    background-color: #ffffff;
+    background-color: #f5f7f9;
     border-right: 1px solid #eee;
   }
 }
