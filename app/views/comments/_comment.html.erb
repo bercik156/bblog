@@ -1,0 +1,16 @@
+<ul class="media-list comments">
+  <li class="media">
+    <a class="pull-left" href="#">
+      <img class="media-object img-circle img-thumbnail" src="http://snipplicious.com/images/guest.png" width="64" alt="Generic placeholder image">
+    </a>
+    <div class="media-body">
+      <h5 class="media-heading pull-left"><%=	 comment.name %></h5>
+      <div class="comment-info pull-left ">
+        <%=	link_to "", [comment.post, comment], method: :delete, class: "btn btn-danger btn-xs glyphicon glyphicon-remove", data: { confirm: "Are You sure?"}  %>
+        <div class="btn btn-default btn-xs"><%=	 time_ago_in_words(comment.created_at) %> ago.</div>
+      </div>
+      <br class="clearfix">
+      <p class="well"><%=	comment.body %></p>
+    </div>
+  </li>
+</ul>
