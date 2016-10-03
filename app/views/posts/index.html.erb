@@ -13,7 +13,10 @@
       </div>
     </div>
     <div class="panel-footer">
-      <div class="text-right"><%=	 post.created_at.strftime("%d %B %Y") %></div>
+      <div class="row">
+        <div class="col-md-6 col-xs-6"><%= post.comments.count %> Comments</div>
+        <div class="col-md-6 col-xs-6 text-right"><%=	 post.created_at.strftime("%d %B %Y") %></div>
+      </div>
     </div>
   </div>
 <% end %>
