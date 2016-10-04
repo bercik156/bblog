@@ -18,12 +18,18 @@
           <span class="icon-bar"></span>
         </button>
       </div>
+
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to 'New Post', new_post_path %></li>
-          <li><a href="#">Log Out</a></li>
+          <%	 if user_signed_in? %>
+            <li><%= link_to 'New Post', new_post_path %></li>
+            <li><%= link_to "Log Out", destroy_user_session_path, :method => :delete %></li>
+            <% else %>
+            <li><%= link_to "Log In", new_user_session_path %></li>
+          <%	end  %>
         </ul>
       </div>
+
     </div>
   </nav>
   <div class="container-fluid">
@@ -43,9 +49,8 @@
         </ul>
       </div>
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-        <% flash.each do [name,msg] %>
-          <p class="notice"><%= notice %></p>
-          <% content_tag(:div, msg, class: "alert") %>
+        <% flash.each do |name, msg| %>
+            <%= content_tag :div, msg, class: "alert alert-#{name}" %>
         <% end %>
         <%= yield %>
       </div>
